@@ -18,23 +18,39 @@ class ObjectMovement():
     def step_forward(self):
         self.play_table_matrix[self.pos_x][self.pos_y] = self.conf['CELL']
         if self.standing_direction_of_object == 'N':
+            if self.pos_y == 0:
+                raise ValueError
             self.pos_y = self.pos_y - 1
         elif self.standing_direction_of_object == 'E':
+            if self.pos_x == (self.row - 1):
+                raise ValueError
             self.pos_x = self.pos_x + 1
         elif self.standing_direction_of_object == 'S':
+            if self.pos_y == (self.column - 1):
+                raise ValueError
             self.pos_y = self.pos_y + 1
         elif self.standing_direction_of_object == 'W':
+            if self.pos_x == 0:
+                raise ValueError
             self.pos_x = self.pos_x - 1
 
     def step_backwards(self):
         self.play_table_matrix[self.pos_x][self.pos_y] = self.conf['CELL']
         if self.standing_direction_of_object == 'N':
+            if self.pos_y == (self.column - 1):
+                raise ValueError
             self.pos_y = self.pos_y + 1
         elif self.standing_direction_of_object == 'E':
+            if self.pos_x == 0:
+                raise ValueError
             self.pos_x = self.pos_x - 1
         elif self.standing_direction_of_object == 'S':
+            if self.pos_y == 0:
+                raise ValueError
             self.pos_y = self.pos_y - 1
         elif self.standing_direction_of_object == 'W':
+            if self.pos_x == (self.row - 1):
+                raise ValueError
             self.pos_x = self.pos_x + 1
             
     def rotate_clockwise(self):
@@ -74,4 +90,3 @@ class ObjectMovement():
     def play(self):
         play =  True
         
-
