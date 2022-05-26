@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     while(invalid_table) :
         try:
-            print('Please enter \'width\' and \'height\' (ex: 4,4) : ', end='')
+            print('Please enter \'height\' and \'width\' (ex: 4,4) : ', end='')
             table = input().strip().split(',')
             width = int(table[0])
             height = int(table[1])
